@@ -143,6 +143,7 @@ class CityPickers {
     BaseStyle sideBarStyle,
     BaseStyle cityItemStyle,
     BaseStyle topStickStyle,
+    Widget appbar,
   }) {
     BaseStyle _sideBarStyle = BaseStyle(
         fontSize: 14,
@@ -174,6 +175,7 @@ class CityPickers {
           pageBuilder: (context, _, __) => new Theme(
               data: theme ?? Theme.of(context),
               child: CitiesSelector(
+                  appbar:appbar,
                   title: title,
                   provincesData: provincesData,
                   citiesData: citiesData,
@@ -202,4 +204,3 @@ class CityPickers {
         ));
   }
 }
-
