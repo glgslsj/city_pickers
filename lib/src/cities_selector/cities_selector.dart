@@ -27,6 +27,7 @@ const defaultTopIndexFontColor = Color(0xffc0c0c0);
 const defaultTopIndexBgColor = Color(0xfff3f4f5);
 
 class CitiesSelector extends StatefulWidget {
+  Widget appbar;
   final String locationCode;
   final String title;
   final Map<String, dynamic> provincesData;
@@ -86,6 +87,7 @@ class CitiesSelector extends StatefulWidget {
 //    this.itemSelectBgColor = Colors.white,
     this.itemFontColor = Colors.black,
     this.itemSelectFontColor = Colors.red,
+    this.appbar,
   });
 
   @override
@@ -413,7 +415,7 @@ class _CitiesSelectorState extends State<CitiesSelector> {
     return Scaffold(
         backgroundColor: Colors.white,
         resizeToAvoidBottomPadding: false,
-        appBar: AppBar(
+        appBar: widget.appbar!=null?widget.appbar:AppBar(
             title: Text(
           widget.title,
         )),
