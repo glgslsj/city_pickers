@@ -182,7 +182,7 @@ class AlphaState extends State<Alpha> {
     for (var alpha in widget.alphas) {
       result.add(new SizedBox(
         key: Key(alpha),
-        height: widget.alphaItemSize,
+        height: widget.alphaItemSize + 4,
         child: new Text(alpha,
             textAlign: TextAlign.center,
             style: TextStyle(
