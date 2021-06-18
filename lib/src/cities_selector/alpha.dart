@@ -120,12 +120,12 @@ class AlphaState extends State<Alpha> {
   _init() {
     List alphas = widget.alphas;
     for (int i = 0; i <= alphas.length; i++) {
-      indexRange.add((i) * widget.alphaItemSize);
+      indexRange.add((i) *(widget.alphaItemSize+4));
     }
   }
 
   String _getHitAlpha(offset) {
-    int hit = (offset / widget.alphaItemSize).toInt();
+    int hit = (offset / (widget.alphaItemSize+4)).toInt();
     if (hit < 0) {
       return null;
     }
@@ -208,7 +208,7 @@ class AlphaState extends State<Alpha> {
             RenderBox renderBox = context.findRenderObject();
             _distance2Top = renderBox.localToGlobal(Offset.zero).dy.toInt() +
                 (renderBox.size.height -
-                        widget.alphaItemSize * widget.alphas.length) /
+                        (widget.alphaItemSize+4) * widget.alphas.length) /
                     2;
           }
 
